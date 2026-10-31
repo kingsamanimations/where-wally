@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Character {
+    id     Int     @id @default(autoincrement())
+    name   String  @unique
+    x      Float
+    y      Float
+    radius Float   @default(0.03)
+    found  Found[]
+}
+
+model Game {
+    id         String   @id @default(uuid())
+    startedAt  DateTime @default(now())
+    finishedAt DateTime?
+    timeMs     Int?
+    playerName String?
+    found      Found[]  
+}
+
+model Found {
+    gameId      String
+    characterId Int
+    game        Game      @relation(fields: [gameId], references: [id])
+    character   Character @relation(fields: [characterId], references: [id])
+
+    @@id([gameId, characterId])
+}

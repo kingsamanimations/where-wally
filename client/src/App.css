@@ -1,0 +1,190 @@
+.scene {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.scene img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+}
+
+.target {
+  position: absolute;
+}
+
+.target-box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  border: 3px solid red;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.target-menu {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: white;
+  border: 1px solid red;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.target-menu button {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.target-menu button:hover {
+  background: black;
+  color: white;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+.hud {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: red;
+  color: white;
+}
+
+.hud-chars span {
+  margin-right: 14px;
+}
+
+.hud-chars .found {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.hud-timer {
+  font-variant-numeric: tabular-nums;
+}
+
+.toast {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid darkred;
+  border-radius: 6px;
+}
+
+.marker {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, 50%);
+  border: 3px solid lime;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.target-menu button:disabled {
+  color: green;
+  text-decoration: dashed;
+  cursor: default;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  background: lightcoral;
+}
+
+.modal {
+  min-width: 280px;
+  padding: 24px;
+  background: white;
+  color: azure;
+  border-radius: 8px;
+}
+
+.modal input {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 6px;
+}
+
+.status {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error { 
+  color: crimson; 
+}
